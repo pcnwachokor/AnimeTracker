@@ -1,9 +1,21 @@
 const express = require("express");
-const mongoose = require("mongoose");
+require("dotenv").config({ path: "./config.env" });
+const connectDB = require("./database.js");
 
-const PORT = 8080;
 const app = express();
+const PORT = 8080;
 
-app.listen(PORT, () => {
-  console.log(`Server is listening on http://localhost:${PORT}`);
-});
+//this function waits for db to connect and then starts server
+const startServer = async () => {
+  try {
+    const db = await connectDB();
+
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  } catch (e) {
+    console.log("Failed to start server", e);
+  }
+};
+
+startServer();
