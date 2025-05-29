@@ -1,0 +1,36 @@
+.navigation-menu {
+  width: 100%;
+  background-color: #282828;
+  display: flex;
+  justify-content: left;
+  padding-left: 2%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+ol {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0 20px;
+}
+
+a {
+  display: block;
+  padding: 20px 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+a:hover {
+  color: #9b00d4;
+  border-bottom: 2px solid #9b00d4;
+}
